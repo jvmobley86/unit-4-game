@@ -7,46 +7,97 @@
     <title>Unit 4 Game</title>
      <!-- Added link to the jQuery library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-    <!-- Added a link to Bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
+   <!-- Added a link to Bootstrap-->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <!--Added link to my css-->
+   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  
 </head>
 <body>
+    <header id="masthead">
+        <div class="container">
+                <div id="header" class="container my-5 bg-white">
+                    <div class="row">
+                            <div class="col-12 mt-4">
+                                    <h1>Crystals Collector</h1>
+                                    </div>
+                    </div>    
+                    <div class="row">
+                                <div class="col-md-4">
+                                    <P>WINS:</P>
+                                    <P id="wins"></P>
+                                </div>
 
-    <script type="text/javascript">
+                                <div class="col-md-4">
+
+                                </div>
+                                        <div class="col-md-4">
+                                            <p>Losses:</p>
+                                            <p id="losses"></p>
+                                        </div>
+                        </div>
+                      </div>
+              </div>
         
-        $(document).ready(function(){
+    </header>
+          
+        <div id="main-container" class="container my-5 bg-white">
+            <div class="row" id="instructions"></div>
+                     <div class="col-12 my-3">
+                <h1>Instructions:</h1>
+                <p>You will be given a random number at the beginning of the game.</p>
+                <p>There are four crystals below. By clicking on a crystal, you add a specific amount of points to your total score.</p>
+                <p>You win the game by matching your total score to the random number. You lose the game if your total score goes above the random number.</p>
+                <p>The value of each crystal is hidden from you until you click on it.</p>
+                <p>Each time when the game starts, the values of the crystals will change.</p>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="crystals" id="gem0" >
+                            <img src="https://purepng.com/public/uploads/large/purepng.com-sapphire-gemsapphiregemstonemineral-corundumaluminium-oxideblue-in-colorfancysapphires-17015289803894slxg.png" alt="blue crystal" style="width:90%">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                        <div class="crystals" id="gem1" >
+                                <img src="https://purepng.com/public/uploads/large/purepng.com-large-emeraldemeraldgemstonemineral-berylcolored-greenbright-greenprecious-stonechromium-rich-1701528785688yjotl.png" alt="green crystal" style="width:95%">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                            <div class="crystals" id="gem2" >
+                                    <img src="http://pngimg.com/uploads/ruby/ruby_PNG1.png" alt="red crystal" style="width:110%">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                                <div class="crystals" id="gem3" >
+                                        <img src="https://www.sccpre.cat/mypng/full/22-227502_purple-diamond-png-image-transparent-background-crystal.png" alt="purple crystal" style="width:90%">
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            
+                    <div id="container" class="container my-5 bg-white">
+                            <div class="row" id="gameplay">
+                                             <div class="col-6 my-3">
+                                        <h1>Number to Match</h1>
+                                        <div class="scores">
+                                            <img src="http://www.pngall.com/wp-content/uploads/2018/05/Gemstone-PNG-Image-File.png" alt="number of crystals" style="width:75%">
+                                           
+                                            <h2 id="computerPick"></h2>
+                                        </div>
+                                        </div>
+                                        <div class="col-6 my-3">
+                                                <h1>Your Total Score</h1>
+                                                <div class="scores">
+                                                <img src="https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/N568GC5jlil5fijda/gemstones-scatter-and-fly-away-over-white-background-with-alpha_s25skrj___F0003.png" alt = "clear crystals" style="width:100%">
+                                                <h3 id="totalScore"></h3>
+                                                </div>
+</div>
+</div>
 
-// Inital Variables
-
-    var computerPick = Math.floor(Math.random()* 102)+19;
-    var lockGame = false;
-
-// Log the computer's pick to the console
-
-    console.log("Computer Pick: " + computerPick);
-
-//Create on-click event to get user's pick
-    $(".btn-choice").on("click", function(){
-
-//Prevent user from changing pick after game is done.
-        if (lockGame !== true) {
-
-//Get value associated with the button the user picked.
-        var yourPick = $(this).val();
-        console.log("Your pick: "+ yourPick);
-
-//Reveal computer's pick in the HTML
-        $("#computer-pick").text(computerPick);
-        }
-    })
-
-        })
-        
-        
-        </script>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
     
 </body>
 </html>
