@@ -16,6 +16,7 @@ h1 {
     line-height: 34px;
     color: navy;
     text-align: center;
+    margin-top: 30px;
 }
 
 p {
@@ -25,8 +26,10 @@ p {
     color: navy;
     text-align: center;
 }
-#crystals {
+.crystals {
     border: white;
+    position: absolute;
+    margin-left: 50px;
 }
 
 #wins {
@@ -50,7 +53,7 @@ p {
     top: 20px;
     width: 100%;
     padding: 15px;
-    margin-top: 0;
+    margin-top: 30px;
     font-weight: 300;
     line-height: 30px;
     color: navy;
@@ -75,3 +78,6 @@ p {
       margin-top: 50px;
       text-align: center;
   }
+ #totalImg {
+     margin-left: 200px;
+ }
